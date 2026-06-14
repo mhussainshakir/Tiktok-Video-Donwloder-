@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TikTok Downloader – Download TikTok Videos Without Watermark Free</title>
+<meta name="description" content="Download TikTok videos without watermark for free. Fast, safe, and easy. No app needed – just paste the TikTok link and download HD video instantly.">
+<meta name="keywords" content="tiktok downloader, download tiktok without watermark, tiktok video download, free tiktok downloader, tiktok mp4 download">
+<meta name="robots" content="index, follow">
+<meta name="author" content="TikSave Pro">
+<link rel="canonical" href="https://yourdomain.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="TikTok Downloader – No Watermark, Free & Fast">
+<meta property="og:description" content="Download any TikTok video without watermark in HD quality. Free, fast, no registration needed.">
+<meta property="og:url" content="https://yourdomain.com/">
+<meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TikTok Downloader – No Watermark Free">
+<meta name="twitter:description" content="Download TikTok videos without watermark instantly. HD quality, free, no login.">
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "TikSave Pro",
+  "url": "https://yourdomain.com/",
+  "description": "Free TikTok video downloader without watermark",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": ["No watermark", "HD quality", "Free", "No login required"]
+}
+</script>
+
+<style>
+  :root {
+    --bg: #0f0f10;
+    --bg2: #1a1a1d;
+    --bg3: #242428;
+    --border: rgba(255,255,255,0.08);
+    --border2: rgba(255,255,255,0.14);
+    --text: #f0f0f0;
+    --text2: #a0a0a8;
+    --text3: #6a6a72;
+    --accent: #fe2c55;
+    --accent2: #ff4d6d;
+    --accent-bg: rgba(254,44,85,0.1);
+    --accent-border: rgba(254,44,85,0.3);
+    --success: #25d366;
+    --success-bg: rgba(37,211,102,0.1);
+    --info: #3b82f6;
+    --info-bg: rgba(59,130,246,0.1);
+    --shadow: 0 4px 24px rgba(0,0,0,0.4);
+    --radius: 14px;
+    --radius-sm: 8px;
+  }
+  [data-theme="light"] {
+    --bg: #f5f5f7;
+    --bg2: #ffffff;
+    --bg3: #ebebed;
+    --border: rgba(0,0,0,0.08);
+    --border2: rgba(0,0,0,0.14);
+    --text: #0f0f10;
+    --text2: #555560;
+    --text3: #888890;
+    --accent: #fe2c55;
+    --accent2: #d41e42;
+    --accent-bg: rgba(254,44,85,0.06);
+    --accent-border: rgba(254,44,85,0.25);
+    --shadow: 0 4px 24px rgba(0,0,0,0.1);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+  }
+  .nav-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 20px; height: 60px;
+  }
+  .logo {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 20px; font-weight: 700; color: var(--text);
+    text-decoration: none;
+  }
+  .logo-icon {
+    width: 34px; height: 34px; background: var(--accent);
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 18px; height: 18px; fill: #fff; }
+  .nav-links { display: flex; align-items: center; gap: 6px; }
+  .nav-links a {
+    padding: 6px 14px; border-radius: 8px;
+    font-size: 14px; color: var(--text2);
+    text-decoration: none; transition: all 0.2s;
+  }
+  .nav-links a:hover { background: var(--bg3); color: var(--text); }
+  .theme-btn {
+    width: 38px; height: 38px; border-radius: 10px;
+    border: 1px solid var(--border2); background: var(--bg3);
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    color: var(--text2); font-size: 16px; transition: all 0.2s; margin-left: 8px;
+  }
+  .theme-btn:hover { background: var(--bg); color: var(--text); }
+  .burger { display: none; background: none; border: none; cursor: pointer; color: var(--text); font-size: 22px; }
+
+  /* HERO */
+  .hero {
+    max-width: 800px; margin: 0 auto;
+    padding: 72px 20px 40px;
+    text-align: center;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--accent-bg); border: 1px solid var(--accent-border);
+    color: var(--accent); border-radius: 50px; padding: 5px 14px;
+    font-size: 12px; font-weight: 600; letter-spacing: .04em;
+    margin-bottom: 24px; text-transform: uppercase;
+  }
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 800; line-height: 1.15;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, var(--text) 0%, var(--text2) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  [data-theme="light"] .hero h1 { background: none; -webkit-text-fill-color: var(--text); }
+  .hero p { font-size: 17px; color: var(--text2); max-width: 560px; margin: 0 auto 36px; }
+
+  /* DOWNLOADER CARD */
+  .dl-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+  }
+  .url-row {
+    display: flex; gap: 10px;
+  }
+  .url-row input {
+    flex: 1; height: 52px;
+    background: var(--bg3); border: 1px solid var(--border2);
+    border-radius: 10px; padding: 0 16px;
+    font-size: 15px; color: var(--text);
+    outline: none; transition: border 0.2s;
+  }
+  .url-row input::placeholder { color: var(--text3); }
+  .url-row input:focus { border-color: var(--accent); }
+  .dl-btn {
+    height: 52px; padding: 0 28px;
+    background: var(--accent); color: #fff;
+    border: none; border-radius: 10px;
+    font-size: 15px; font-weight: 600;
+    cursor: pointer; white-space: nowrap;
+    transition: background 0.2s, transform 0.1s;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .dl-btn:hover { background: var(--accent2); }
+  .dl-btn:active { transform: scale(0.97); }
+  .dl-btn:disabled { background: var(--bg3); color: var(--text3); cursor: not-allowed; }
+
+  /* RESULT */
+  .result-wrap { display: none; margin-top: 20px; border-top: 1px solid var(--border); padding-top: 20px; }
+  .result-inner { display: flex; gap: 16px; align-items: flex-start; }
+  .thumb {
+    width: 110px; min-width: 110px; height: 150px;
+    border-radius: 10px; overflow: hidden;
+    background: var(--bg3); border: 1px solid var(--border);
+  }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .result-meta { flex: 1; min-width: 0; }
+  .result-title { font-size: 15px; font-weight: 600; margin-bottom: 5px; line-height: 1.4; }
+  .result-author { font-size: 13px; color: var(--accent); margin-bottom: 10px; }
+  .stats-row { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 14px; }
+  .stat { font-size: 12px; color: var(--text2); display: flex; align-items: center; gap: 4px; }
+  .dl-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .dl-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 9px 16px; border-radius: 8px; font-size: 13px; font-weight: 600;
+    text-decoration: none; transition: all 0.2s; cursor: pointer; border: none;
+  }
+  .dl-link-primary { background: var(--accent); color: #fff; }
+  .dl-link-primary:hover { background: var(--accent2); }
+  .dl-link-secondary { background: var(--bg3); color: var(--text); border: 1px solid var(--border2); }
+  .dl-link-secondary:hover { background: var(--border); }
+  .dl-link-audio { background: var(--info-bg); color: var(--info); border: 1px solid rgba(59,130,246,0.3); }
+  .dl-link-audio:hover { background: rgba(59,130,246,0.18); }
+
+  /* ALERTS */
+  .alert { padding: 12px 16px; border-radius: 10px; font-size: 13px; margin-top: 14px; display: none; }
+  .alert-err { background: rgba(239,68,68,0.1); color: #ef4444; border: 1px solid rgba(239,68,68,0.25); }
+  .alert-ok { background: var(--success-bg); color: var(--success); border: 1px solid rgba(37,211,102,0.25); }
+
+  /* SPINNER */
+  .spinner-wrap { display: none; justify-content: center; padding: 32px 0; }
+  .spinner { width: 36px; height: 36px; border: 3px solid var(--border2); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.7s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* FEATURES */
+  .section { max-width: 1100px; margin: 0 auto; padding: 64px 20px; }
+  .section-tag { font-size: 11px; font-weight: 700; letter-spacing: .1em; color: var(--accent); text-transform: uppercase; margin-bottom: 10px; }
+  .section-title { font-size: clamp(22px, 3vw, 32px); font-weight: 700; margin-bottom: 12px; }
+  .section-sub { font-size: 16px; color: var(--text2); max-width: 520px; margin-bottom: 40px; }
+  .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .feat-card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .feat-card:hover { border-color: var(--border2); transform: translateY(-2px); }
+  .feat-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: var(--accent-bg); border: 1px solid var(--accent-border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; margin-bottom: 14px;
+  }
+  .feat-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .feat-desc { font-size: 13px; color: var(--text2); line-height: 1.55; }
+
+  /* HOW TO USE */
+  .how-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .how-item { display: flex; gap: 16px; }
+  .how-num {
+    min-width: 38px; height: 38px; border-radius: 50%;
+    background: var(--accent-bg); border: 1px solid var(--accent-border);
+    color: var(--accent); font-size: 15px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .how-text h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .how-text p { font-size: 13px; color: var(--text2); line-height: 1.5; }
+
+  /* FAQ */
+  .faq-list { display: flex; flex-direction: column; gap: 10px; }
+  .faq-item {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); overflow: hidden;
+  }
+  .faq-q {
+    width: 100%; display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 20px; font-size: 15px; font-weight: 600; color: var(--text);
+    background: none; border: none; cursor: pointer; text-align: left; gap: 12px;
+    transition: background 0.15s;
+  }
+  .faq-q:hover { background: var(--bg3); }
+  .faq-chevron { font-size: 18px; color: var(--text3); transition: transform 0.25s; flex-shrink: 0; }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  .faq-a-inner { padding: 0 20px 16px; font-size: 14px; color: var(--text2); line-height: 1.65; }
+  .faq-item.open .faq-chevron { transform: rotate(180deg); }
+  .faq-item.open .faq-a { max-height: 300px; }
+
+  /* TERMS */
+  .terms-content { max-width: 760px; }
+  .terms-content h3 { font-size: 17px; font-weight: 600; margin: 28px 0 8px; color: var(--text); }
+  .terms-content p { font-size: 14px; color: var(--text2); line-height: 1.7; margin-bottom: 10px; }
+  .terms-content ul { padding-left: 20px; }
+  .terms-content ul li { font-size: 14px; color: var(--text2); line-height: 1.7; margin-bottom: 4px; }
+
+  /* STATS BANNER */
+  .stats-banner {
+    background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    padding: 40px 20px;
+  }
+  .stats-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; text-align: center; }
+  .stat-item .num { font-size: 32px; font-weight: 800; color: var(--accent); }
+  .stat-item .lbl { font-size: 13px; color: var(--text2); margin-top: 4px; }
+
+  /* FOOTER */
+  footer {
+    background: var(--bg2); border-top: 1px solid var(--border);
+    padding: 40px 20px 24px;
+  }
+  .footer-inner { max-width: 1100px; margin: 0 auto; }
+  .footer-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 32px; margin-bottom: 32px; }
+  .footer-brand p { font-size: 13px; color: var(--text2); margin-top: 8px; max-width: 280px; line-height: 1.6; }
+  .footer-links h4 { font-size: 13px; font-weight: 600; margin-bottom: 12px; color: var(--text); }
+  .footer-links a { display: block; font-size: 13px; color: var(--text2); text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-bottom { border-top: 1px solid var(--border); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .footer-bottom p { font-size: 12px; color: var(--text3); }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid var(--border); }
+
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    .url-row { flex-direction: column; }
+    .dl-btn { width: 100%; justify-content: center; }
+    .result-inner { flex-direction: column; }
+    .thumb { width: 100%; height: 200px; min-width: auto; }
+    .nav-links { display: none; }
+    .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: var(--bg2); border-bottom: 1px solid var(--border); padding: 12px 20px; gap: 4px; }
+    .burger { display: block; }
+    nav { position: relative; }
+  }
+  @media (max-width: 480px) {
+    .hero { padding: 48px 16px 32px; }
+    .dl-card { padding: 18px 16px; }
+    .section { padding: 48px 16px; }
+  }
+</style>
+</head>
+<body data-theme="dark">
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.73a8.26 8.26 0 0 0 4.83 1.54V6.82a4.85 4.85 0 0 1-1.07-.13z"/></svg>
+      </div>
+      TikSave Pro
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#downloader">Downloader</a>
+      <a href="#how-to-use">How to Use</a>
+      <a href="#faq">FAQ</a>
+      <a href="#terms">Terms</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px">
+      <button class="theme-btn" onclick="toggleTheme()" title="Toggle theme" id="themeBtn">🌙</button>
+      <button class="burger" onclick="toggleMenu()" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="downloader">
+  <div class="hero-badge">
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
+    Free & No Watermark
+  </div>
+  <h1>Download TikTok Videos Without Watermark</h1>
+  <p>Paste any TikTok link and download HD video instantly. No login, no app, no watermark — completely free.</p>
+
+  <div class="dl-card" style="max-width:700px;margin:0 auto 16px;">
+    <div class="url-row">
+      <input type="text" id="videoUrl" placeholder="Paste TikTok video link here... e.g. https://www.tiktok.com/@user/video/..." />
+      <button class="dl-btn" onclick="downloadVideo()" id="dlBtn">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 3v14M5 12l7 7 7-7"/><path d="M3 20h18"/></svg>
+        Download
+      </button>
+    </div>
+
+    <div class="alert alert-err" id="errAlert"></div>
+    <div class="alert alert-ok" id="okAlert"></div>
+
+    <div class="spinner-wrap" id="spinnerWrap">
+      <div class="spinner"></div>
+    </div>
+
+    <div class="result-wrap" id="resultWrap">
+      <div class="result-inner">
+        <div class="thumb"><img id="thumbImg" src="" alt="Video thumbnail"></div>
+        <div class="result-meta">
+          <div class="result-title" id="resTitle">—</div>
+          <div class="result-author" id="resAuthor">—</div>
+          <div class="stats-row">
+            <span class="stat">❤️ <span id="resLikes">—</span></span>
+            <span class="stat">▶️ <span id="resViews">—</span></span>
+            <span class="stat">💬 <span id="resComments">—</span></span>
+            <span class="stat">🔁 <span id="resShares">—</span></span>
+          </div>
+          <div class="dl-actions">
+            <a id="dlNowm" href="#" class="dl-link dl-link-primary" target="_blank" rel="noopener">
+              ⬇ No Watermark (HD)
+            </a>
+            <a id="dlWm" href="#" class="dl-link dl-link-secondary" target="_blank" rel="noopener">
+              ⬇ With Watermark
+            </a>
+            <a id="dlAudio" href="#" class="dl-link dl-link-audio" target="_blank" rel="noopener">
+              🎵 Audio MP3
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size:12px;color:var(--text3);">By using this tool you agree to our <a href="#terms" style="color:var(--accent);text-decoration:none;">Terms of Service</a>. We don't store your videos.</p>
+</div>
+
+<!-- STATS BANNER -->
+<div class="stats-banner">
+  <div class="stats-inner">
+    <div class="stat-item"><div class="num">10M+</div><div class="lbl">Videos Downloaded</div></div>
+    <div class="stat-item"><div class="num">100%</div><div class="lbl">Free Forever</div></div>
+    <div class="stat-item"><div class="num">0</div><div class="lbl">Registration Needed</div></div>
+    <div class="stat-item"><div class="num">HD</div><div class="lbl">Video Quality</div></div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="section" id="features">
+  <div class="section-tag">Why TikSave Pro?</div>
+  <div class="section-title">Everything you need to save TikTok videos</div>
+  <div class="section-sub">Fast, reliable, and completely free. No hidden fees, no watermarks, no limits.</div>
+  <div class="features-grid">
+    <div class="feat-card">
+      <div class="feat-icon">🚫</div>
+      <div class="feat-title">No Watermark</div>
+      <div class="feat-desc">Download clean, watermark-free TikTok videos in original HD quality with one click.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">⚡</div>
+      <div class="feat-title">Lightning Fast</div>
+      <div class="feat-desc">Our servers process your request in under 2 seconds. No waiting, no queues.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🔒</div>
+      <div class="feat-title">100% Safe</div>
+      <div class="feat-desc">We never store your videos or personal data. Your privacy is fully protected.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🎵</div>
+      <div class="feat-title">Audio Extract</div>
+      <div class="feat-desc">Extract and download the background music or audio from any TikTok video as MP3.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📱</div>
+      <div class="feat-title">Works Everywhere</div>
+      <div class="feat-desc">Works perfectly on iPhone, Android, Windows, Mac — any device, any browser.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">∞</div>
+      <div class="feat-title">Unlimited Downloads</div>
+      <div class="feat-desc">No daily limit. Download as many TikTok videos as you want, absolutely free.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- HOW TO USE -->
+<div class="section" id="how-to-use">
+  <div class="section-tag">Step by Step</div>
+  <div class="section-title">How to download TikTok videos</div>
+  <div class="section-sub">Three simple steps and your video is ready.</div>
+  <div class="how-grid">
+    <div class="how-item">
+      <div class="how-num">1</div>
+      <div class="how-text">
+        <h3>Copy TikTok Link</h3>
+        <p>Open TikTok app or website, find the video you want, tap Share → Copy Link.</p>
+      </div>
+    </div>
+    <div class="how-item">
+      <div class="how-num">2</div>
+      <div class="how-text">
+        <h3>Paste the URL</h3>
+        <p>Paste the copied TikTok link into the input field above and click the Download button.</p>
+      </div>
+    </div>
+    <div class="how-item">
+      <div class="how-num">3</div>
+      <div class="how-text">
+        <h3>Save Your Video</h3>
+        <p>Choose No Watermark (HD), Original, or Audio — then click to download directly to your device.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- FAQ -->
+<div class="section" id="faq">
+  <div class="section-tag">FAQ</div>
+  <div class="section-title">Frequently Asked Questions</div>
+  <div class="section-sub">Everything you need to know about TikSave Pro.</div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Is TikSave Pro really free?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">Yes, TikSave Pro is completely free to use. There are no hidden charges, no premium plans, and no registration required. You can download unlimited TikTok videos without paying anything.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        How do I remove watermark from TikTok video?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">Simply paste the TikTok video URL in the input box above and click Download. Then choose the "No Watermark (HD)" button. The downloaded video will be completely clean without any TikTok watermark or username overlay.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Does it work on mobile (iPhone & Android)?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">Yes! TikSave Pro is fully mobile-friendly. It works on iPhone Safari, Android Chrome, and all other mobile browsers. No app installation needed — just open this website and download directly.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Can I download TikTok audio / music only?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">Yes! After pasting the TikTok link and clicking Download, you will see an "Audio MP3" button in the results. Click it to download just the audio track from the TikTok video as an MP3 file.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Is it safe to use? Do you store my videos?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">Completely safe. We do not store, upload, or keep any videos on our servers. The download link is fetched directly from TikTok's CDN servers. We also do not store any personal information or browsing history.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Why is the download not working?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">Make sure the TikTok video is public (not private or restricted). Also ensure you are copying the full URL (e.g. https://www.tiktok.com/@username/video/...). Private videos cannot be downloaded. Try refreshing the page and pasting the link again.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        What video quality do I get?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">We provide the highest available quality directly from TikTok's servers — usually 720p or 1080p HD depending on the original video. The "No Watermark (HD)" option gives you the best quality available for that video.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Is downloading TikTok videos legal?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">Downloading TikTok videos for personal use is generally acceptable. However, redistributing, re-uploading, or commercially using someone else's content without their permission may violate copyright laws and TikTok's Terms of Service. Always respect the original creator's rights.</div></div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- TERMS -->
+<div class="section" id="terms">
+  <div class="section-tag">Legal</div>
+  <div class="section-title">Terms of Service & Privacy Policy</div>
+  <div class="terms-content">
+
+    <h3>1. Acceptance of Terms</h3>
+    <p>By accessing and using TikSave Pro ("the Service"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the Service.</p>
+
+    <h3>2. Service Description</h3>
+    <p>TikSave Pro is a free online tool that allows users to download publicly available TikTok videos for personal, non-commercial use. The Service fetches video content directly from TikTok's public CDN servers.</p>
+
+    <h3>3. Acceptable Use</h3>
+    <p>You may use this Service only for lawful purposes. You agree NOT to:</p>
+    <ul>
+      <li>Download and redistribute content without the original creator's permission</li>
+      <li>Use downloaded content for commercial purposes without proper licensing</li>
+      <li>Download private or restricted videos that you are not authorized to access</li>
+      <li>Use the Service to violate any applicable laws or regulations</li>
+      <li>Attempt to reverse engineer or interfere with the Service's infrastructure</li>
+    </ul>
+
+    <h3>4. Copyright & Intellectual Property</h3>
+    <p>TikSave Pro does not claim ownership of any videos downloaded through this Service. All content belongs to the respective TikTok creators. Users are solely responsible for ensuring they have the right to download and use any content. We strongly encourage respecting creators' rights and obtaining permission before using their content.</p>
+
+    <h3>5. Privacy Policy</h3>
+    <p>We are committed to protecting your privacy:</p>
+    <ul>
+      <li><strong>No data storage:</strong> We do not store, log, or retain any video URLs you submit</li>
+      <li><strong>No personal information:</strong> We do not collect names, emails, or account details</li>
+      <li><strong>No cookies for tracking:</strong> We only use essential cookies for site functionality</li>
+      <li><strong>Third-party API:</strong> Video links are processed via RapidAPI's TikTok Downloader service, subject to their privacy policy</li>
+    </ul>
+
+    <h3>6. Disclaimer of Warranties</h3>
+    <p>The Service is provided "as is" without any warranties of any kind. We do not guarantee uninterrupted, error-free, or always-available service. TikTok may change their platform at any time which could affect our Service's functionality.</p>
+
+    <h3>7. Limitation of Liability</h3>
+    <p>TikSave Pro shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the Service, including but not limited to loss of data, loss of revenue, or any damages resulting from unauthorized use of downloaded content.</p>
+
+    <h3>8. Changes to Terms</h3>
+    <p>We reserve the right to modify these Terms at any time. Continued use of the Service after any changes constitutes acceptance of the new Terms.</p>
+
+    <h3>9. Contact</h3>
+    <p>For any questions regarding these Terms, please contact us at: <a href="mailto:contact@yourdomain.com" style="color:var(--accent);text-decoration:none;">contact@yourdomain.com</a></p>
+
+    <p style="margin-top:20px;font-size:12px;color:var(--text3);">Last updated: June 2025</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo" style="margin-bottom:10px">
+          <div class="logo-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.73a8.26 8.26 0 0 0 4.83 1.54V6.82a4.85 4.85 0 0 1-1.07-.13z"/></svg>
+          </div>
+          TikSave Pro
+        </div>
+        <p>The fastest and most reliable free TikTok video downloader. No watermark, no registration, no limits.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#downloader">Downloader</a>
+        <a href="#how-to-use">How to Use</a>
+        <a href="#features">Features</a>
+        <a href="#faq">FAQ</a>
+        <a href="#terms">Terms of Service</a>
+        <a href="#terms">Privacy Policy</a>
+      </div>
+      <div class="footer-links">
+        <h4>Supported Formats</h4>
+        <a href="#">TikTok MP4 Video</a>
+        <a href="#">TikTok Audio MP3</a>
+        <a href="#">HD No Watermark</a>
+        <a href="#">TikTok Thumbnail</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 TikSave Pro. All rights reserved.</p>
+      <p>Not affiliated with TikTok or ByteDance.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const API_KEY = '67c7a43700msh20806dbd84fa5b3p12ca50jsn8067f232b1e6';
+const API_HOST = 'tiktok-downloader-download-tiktok-videos-without-watermark.p.rapidapi.com';
+
+function toggleTheme() {
+  const body = document.body;
+  const btn = document.getElementById('themeBtn');
+  if (body.dataset.theme === 'dark') {
+    body.dataset.theme = 'light';
+    btn.textContent = '🌙';
+  } else {
+    body.dataset.theme = 'dark';
+    btn.textContent = '☀️';
+  }
+}
+
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+function fmtNum(n) {
+  if (!n && n !== 0) return '—';
+  n = parseInt(n) || 0;
+  if (n >= 1e6) return (n / 1e6).toFixed(1) + 'M';
+  if (n >= 1e3) return (n / 1e3).toFixed(1) + 'K';
+  return n.toString();
+}
+
+function showErr(msg) {
+  const el = document.getElementById('errAlert');
+  el.textContent = '⚠ ' + msg;
+  el.style.display = 'block';
+  document.getElementById('okAlert').style.display = 'none';
+}
+
+function showOk(msg) {
+  const el = document.getElementById('okAlert');
+  el.textContent = '✓ ' + msg;
+  el.style.display = 'block';
+  document.getElementById('errAlert').style.display = 'none';
+}
+
+function clearAlerts() {
+  document.getElementById('errAlert').style.display = 'none';
+  document.getElementById('okAlert').style.display = 'none';
+}
+
+async function downloadVideo() {
+  const url = document.getElementById('videoUrl').value.trim();
+  clearAlerts();
+  document.getElementById('resultWrap').style.display = 'none';
+  document.getElementById('spinnerWrap').style.display = 'flex';
+  document.getElementById('dlBtn').disabled = true;
+
+  if (!url) {
+    document.getElementById('spinnerWrap').style.display = 'none';
+    document.getElementById('dlBtn').disabled = false;
+    showErr('Please paste a TikTok video URL first.');
+    return;
+  }
+  if (!url.includes('tiktok.com')) {
+    document.getElementById('spinnerWrap').style.display = 'none';
+    document.getElementById('dlBtn').disabled = false;
+    showErr('Please enter a valid TikTok URL (must contain tiktok.com)');
+    return;
+  }
+
+  try {
+    const endpoint = `https://${API_HOST}/rich_response/index?url=${encodeURIComponent(url)}`;
+    const res = await fetch(endpoint, {
+      method: 'GET',
+      headers: {
+        'x-rapidapi-key': API_KEY,
+        'x-rapidapi-host': API_HOST,
+        'Content-Type': 'application/json'
+      }
+    });
+
+    const data = await res.json();
+    document.getElementById('spinnerWrap').style.display = 'none';
+    document.getElementById('dlBtn').disabled = false;
+
+    if (!res.ok) {
+      showErr('API Error: ' + (data.message || data.msg || 'Status ' + res.status));
+      return;
+    }
+
+    const d = data.data || data;
+
+    if (!d) {
+      showErr('Could not fetch video. Make sure the video is public and the URL is correct.');
+      return;
+    }
+
+    const title = d.title || d.desc || '(No title)';
+    const author = d.author?.nickname ? '@' + (d.author.unique_id || d.author.nickname) : 'Unknown creator';
+    const cover = d.cover?.[0] || d.thumbnail || d.cover || '';
+    const videoNoWm = d.video?.[0] || d.play || d.hdplay || '';
+    const videoWm = d.OriginalWatermarkedVideo?.[0] || d.wmplay || '';
+    const audio = d.music?.[0] || d.music_info?.play || '';
+
+    document.getElementById('resTitle').textContent = title;
+    document.getElementById('resAuthor').textContent = author;
+    document.getElementById('resLikes').textContent = fmtNum(d.digg_count || d.stats?.digg_count);
+    document.getElementById('resViews').textContent = fmtNum(d.play_count || d.stats?.play_count);
+    document.getElementById('resComments').textContent = fmtNum(d.comment_count || d.stats?.comment_count);
+    document.getElementById('resShares').textContent = fmtNum(d.share_count || d.stats?.share_count);
+
+    if (cover) document.getElementById('thumbImg').src = cover;
+
+    const dlNowm = document.getElementById('dlNowm');
+    const dlWm = document.getElementById('dlWm');
+    const dlAudio = document.getElementById('dlAudio');
+
+    if (videoNoWm) { dlNowm.href = videoNoWm; dlNowm.style.display = 'inline-flex'; }
+    else dlNowm.style.display = 'none';
+
+    if (videoWm) { dlWm.href = videoWm; dlWm.style.display = 'inline-flex'; }
+    else dlWm.style.display = 'none';
+
+    if (audio) { dlAudio.href = audio; dlAudio.style.display = 'inline-flex'; }
+    else dlAudio.style.display = 'none';
+
+    document.getElementById('resultWrap').style.display = 'block';
+    showOk('Video found! Click a download button below.');
+
+  } catch (err) {
+    document.getElementById('spinnerWrap').style.display = 'none';
+    document.getElementById('dlBtn').disabled = false;
+    showErr('Network error: ' + err.message + '. Check your connection and try again.');
+  }
+}
+
+document.getElementById('videoUrl').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') downloadVideo();
+});
+</script>
+</body>
+</html>
