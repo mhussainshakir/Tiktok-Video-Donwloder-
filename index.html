@@ -14,7 +14,7 @@
 <meta name="apple-mobile-web-app-title" content="TikSave Pro">
 <meta name="theme-color" content="#7c3aed">
 <link rel="manifest" href="/manifest.json">
-<link rel="apple-touch-icon" href="/.netlify/functions/icon?size=180">
+<link rel="apple-touch-icon" href="/icon-192.png">
 
 <!-- Schema.org JSON-LD -->
 <script type="application/ld+json">
@@ -79,7 +79,7 @@
 
   /* ─── ANIMATED BG BLOBS ─── */
   .bg-blobs {
-    position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+    position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 0; pointer-events: none; overflow: hidden;
   }
   .blob {
     position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.12;
@@ -169,6 +169,7 @@
   @keyframes dotBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 
   .hero h1 {
+    font-size: 36px;
     font-size: clamp(28px, 5.5vw, 54px);
     font-weight: 900; line-height: 1.1;
     margin-bottom: 20px;
@@ -194,7 +195,7 @@
   }
   .dl-card::before {
     content: '';
-    position: absolute; inset: -1px;
+    position: absolute; top: -1px; right: -1px; bottom: -1px; left: -1px;
     border-radius: calc(var(--radius) + 1px);
     background: var(--grad-hero);
     z-index: -1;
@@ -336,7 +337,7 @@
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  .section-title { font-size: clamp(22px, 3vw, 34px); font-weight: 800; margin-bottom: 14px; }
+  .section-title { font-size: 26px; font-size: clamp(22px, 3vw, 34px); font-weight: 800; margin-bottom: 14px; }
   .section-sub { font-size: 16px; color: var(--text2); max-width: 520px; margin-bottom: 44px; }
 
   /* ─── FEATURES ─── */
@@ -532,7 +533,7 @@
 
   /* ─── iOS MODAL ─── */
   .ios-modal-backdrop {
-    display: none; position: fixed; inset: 0; z-index: 999;
+    display: none; position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 999;
     background: rgba(0,0,0,0.7); backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     align-items: flex-end; justify-content: center;
@@ -1123,18 +1124,19 @@ async function downloadVideo() {
     }
 
     const title = d.title || d.desc || '(No title)';
-    const author = d.author?.nickname ? '@' + (d.author.unique_id || d.author.nickname) : 'Unknown creator';
-    const cover = d.cover?.[0] || d.thumbnail || d.cover || '';
-    const videoNoWm = d.video?.[0] || d.play || d.hdplay || '';
-    const videoWm = d.OriginalWatermarkedVideo?.[0] || d.wmplay || '';
-    const audio = d.music?.[0] || d.music_info?.play || '';
+    const authorNickname = d.author && d.author.nickname;
+    const author = authorNickname ? '@' + (d.author.unique_id || d.author.nickname) : 'Unknown creator';
+    const cover = (d.cover && d.cover[0]) || d.thumbnail || d.cover || '';
+    const videoNoWm = (d.video && d.video[0]) || d.play || d.hdplay || '';
+    const videoWm = (d.OriginalWatermarkedVideo && d.OriginalWatermarkedVideo[0]) || d.wmplay || '';
+    const audio = (d.music && d.music[0]) || (d.music_info && d.music_info.play) || '';
 
     document.getElementById('resTitle').textContent = title;
     document.getElementById('resAuthor').textContent = author;
-    document.getElementById('resLikes').textContent = fmtNum(d.digg_count || d.stats?.digg_count);
-    document.getElementById('resViews').textContent = fmtNum(d.play_count || d.stats?.play_count);
-    document.getElementById('resComments').textContent = fmtNum(d.comment_count || d.stats?.comment_count);
-    document.getElementById('resShares').textContent = fmtNum(d.share_count || d.stats?.share_count);
+    document.getElementById('resLikes').textContent = fmtNum(d.digg_count || (d.stats && d.stats.digg_count));
+    document.getElementById('resViews').textContent = fmtNum(d.play_count || (d.stats && d.stats.play_count));
+    document.getElementById('resComments').textContent = fmtNum(d.comment_count || (d.stats && d.stats.comment_count));
+    document.getElementById('resShares').textContent = fmtNum(d.share_count || (d.stats && d.stats.share_count));
 
     if (cover) document.getElementById('thumbImg').src = cover;
 

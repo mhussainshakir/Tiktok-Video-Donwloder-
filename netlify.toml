@@ -15,9 +15,9 @@
     Cache-Control = "public, max-age=3600"
     Content-Type = "application/manifest+json; charset=utf-8"
 
-# SVG icons
+# PNG icons
 [[headers]]
-  for = "/icons/*.svg"
+  for = "/icon-*.png"
   [headers.values]
     Cache-Control = "public, max-age=86400"
-    Content-Type = "image/svg+xml; charset=utf-8"
+    Content-Type = "image/png"

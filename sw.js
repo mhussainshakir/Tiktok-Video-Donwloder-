@@ -1,5 +1,5 @@
 const CACHE = 'tiksave-v1';
-const SHELL = ['/', '/index.html', '/manifest.json', '/icons/icon-192.svg', '/icons/icon-512.svg'];
+const SHELL = ['/', '/index.html', '/manifest.json', '/icon-192.png', '/icon-512.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(
@@ -36,7 +36,7 @@ self.addEventListener('fetch', e => {
   }
 
   // Cache-first for app shell assets
-  if (SHELL.includes(url.pathname) || url.pathname.startsWith('/icons/')) {
+  if (SHELL.includes(url.pathname)) {
     e.respondWith(
       caches.match(req).then(cached => cached || fetch(req).then(res => {
         if (res.ok) {
